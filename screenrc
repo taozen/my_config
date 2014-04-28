@@ -1,0 +1,43 @@
+# No startup message
+startup_message off
+
+defflow off
+
+# Line number to scrollback.
+defscrollback 65535
+
+# An alternative hardstatus to display a bar at the bottom listing the
+# window names and highlighting the current window name. (This is only
+# enabled if there is no hardstatus setting for your terminal)
+hardstatus on
+
+# Status line customization.
+hardstatus alwayslastline " %-Lw%{= KY}%n%f %t%{-}%+Lw %= @%H %0c:%s "
+
+# key bingdings
+# remove some stupid/dangerous key bindings
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+
+bind l windowlist
+bindkey ^[, prev
+bindkey ^[. next
+
+escape ``
+
+# some useful keys for resizing
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+
+# bind some keys for moving between split windows
+bind j focus down
+bind k focus up
+bind t focus top
+bind b focus bottom
