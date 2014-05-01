@@ -21,6 +21,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+" Ruby style uses two spaces indent.
+au FileType ruby setl sw=2 sts=2 et
+
 set noincsearch
 
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L\ \ Col:\ %c
