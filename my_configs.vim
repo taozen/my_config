@@ -1,4 +1,5 @@
 set history=700
+set foldcolumn=0 "No left bar
 
 colorscheme zellner
 set background=dark
@@ -22,9 +23,9 @@ set tabstop=4
 
 set noincsearch
 
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L:%c
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L\ \ Col:\ %c
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""
 " => Minibuffer plugin
 """"""""""""""""""""""""""""""
 let g:miniBufExplorerDebugLevel = 10
@@ -51,5 +52,4 @@ augroup exp
     au BufRead,BufNew *.exp setl autoindent smartindent
     au BufRead,BufNew *.exp inoremap # X^H#
 augroup END
-
 
