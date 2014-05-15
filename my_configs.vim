@@ -53,7 +53,7 @@ map <leader>ba :%bd<bar>q!<cr>
 augroup exp
     au!
     au BufRead,BufNew *.exp setl autoindent smartindent
-    au BufRead,BufNew *.exp inoremap # X^H#
+    au BufRead,BufNew *.exp inoremap # X<c-h>#
 augroup END
 
 " Matchit for fast locating the end/begining of a code block.
