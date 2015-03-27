@@ -31,21 +31,36 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 """""""""""""""""""""""""""""
 " => Minibuffer plugin
 """"""""""""""""""""""""""""""
+
+try
+    source ~/.vim_runtime/minibufexpl.vim
+catch
+endtry
+
+let g:miniBufExplBRSplit = 1
+let g:miniBufExplVSplit = 25
 let g:miniBufExplorerDebugLevel = 10
 let g:miniBufExplModSelTarget = 1
 let g:miniBufExplorerMoreThanOne = 2
 let g:miniBufExplModSelTarget = 0
 let g:miniBufExplUseSingleClick = 1
 let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplVSplit = 25
 let g:miniBufExplMaxSize = 0
 let g:miniBufExplSplitBelow=1
-
 let g:bufExplorerSortBy = "name"
+let g:miniBufExplorerHideWhenDiff = 1
+
+" MiniBufExpl Colors
+hi MBENormal               guifg=#808080 guibg=fg
+hi MBEChanged              guifg=#CD5907 guibg=fg
+hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
+hi MBEVisibleChanged       guifg=#F1266F guibg=fg
+hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
+hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
 
 autocmd BufRead,BufNew :call UMiniBufExplorer
 
-map <leader>u :TMiniBufExplorer<cr>
+map <leader>u :MBEToggle<cr>
 map <leader>ba :%bd!<bar>q!<cr>
 
 "Auto filetype detection works well for shell scripts but not
