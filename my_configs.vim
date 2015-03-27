@@ -46,14 +46,16 @@ let g:bufExplorerSortBy = "name"
 autocmd BufRead,BufNew :call UMiniBufExplorer
 
 map <leader>u :TMiniBufExplorer<cr>
-map <leader>ba :%bd<bar>q!<cr>
+map <leader>ba :%bd!<bar>q!<cr>
 
 "Auto filetype detection works well for shell scripts but not
 "for expect, so we need the following settings.
 augroup exp
     au!
     au BufRead,BufNew *.exp setl autoindent smartindent
-    au BufRead,BufNew *.exp inoremap # X<c-h>#
+
+    " Note that ^H is actually (ctrl-v ctrl-h) under insertion mode.
+    au BufRead,BufNew *.exp inoremap # X#
 augroup END
 
 " Matchit for fast locating the end/begining of a code block.
