@@ -541,21 +541,21 @@ function! <SID>RenderSyntax()
     syn match MBEVisibleActiveChanged     '\[[^\]]*\]\*+!'
 
     "MiniBufExpl Color Examples
-    " hi MBENormal               guifg=#808080 guibg=fg
-    " hi MBEChanged              guifg=#CD5907 guibg=fg
-    " hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
-    " hi MBEVisibleChanged       guifg=#F1266F guibg=fg
-    " hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
-    " hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+    "hi MBENormal               guifg=#808080 guibg=fg
+    "hi MBEChanged              guifg=#CD5907 guibg=fg
+    "hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
+    "hi MBEVisibleChanged       guifg=#F1266F guibg=fg
+    "hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
+    "hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
 
     if !exists("g:did_minibufexplorer_syntax_inits")
       let g:did_minibufexplorer_syntax_inits = 1
-      hi def link MBENormal                Comment
-      hi def link MBEChanged               String
-      hi def link MBEVisibleNormal         Special
-      hi def link MBEVisibleChanged        Special
-      "hi def link MBEVisibleActiveNormal   Underlined
-      hi def link MBEVisibleActiveChanged  Error
+      hi def link MBENormal                PreProc
+      hi def link MBEChanged               Statement
+      hi def link MBEVisibleNormal         PreProc
+      hi def link MBEVisibleChanged        Statement
+      hi def link MBEVisibleActiveNormal   Type
+      hi def link MBEVisibleActiveChanged  Special
     endif
 
     let b:current_syntax = "minibufexpl"
