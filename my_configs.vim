@@ -1,5 +1,6 @@
+set mouse=          " Disable mouse moving triggered by touch pad.          
 set history=700
-set foldcolumn=0 "No left bar
+set foldcolumn=0    " No left bar
 
 colorscheme zellner
 set background=dark
