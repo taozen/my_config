@@ -59,7 +59,7 @@ augroup OpenAllFoldsOnFileOpen
 augroup END
 
 "}}}
-" Quick showing of line number.         {{{
+" ',n' for quick 'set nu'         {{{
 map <leader>n :set nu<cr>
 
 "}}}
