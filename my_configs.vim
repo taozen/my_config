@@ -4,6 +4,10 @@
 "   HINT:   Type zR if you don't know how to use folds
 "
 
+" Enable modeline explicitly.      {{{
+set modeline
+
+"}}}
 " Disable mouse moving triggered by touch pad.      {{{
 set mouse=          
 
@@ -49,14 +53,15 @@ set tabstop=4
 " zR - open all folds
 " In addition, use zf<motion> to create a fold manually.
 " Or under marker mode, <range>fo to create a fold.
-map <leader>f :set fdm=syntax<cr>
+map <leader>fs :set fdm=syntax<cr>
+map <leader>fm :set fdm=marker<cr>
 " Keep all folds open when a file is opened
 
-set fdm=syntax
-augroup OpenAllFoldsOnFileOpen
-    autocmd!
-    autocmd BufRead * normal zR
-augroup END
+"set fdm=syntax
+"augroup OpenAllFoldsOnFileOpen
+"    autocmd!
+"    autocmd BufRead * normal zR
+"augroup END
 
 "}}}
 " ',n' for quick 'set nu'         {{{
@@ -113,4 +118,4 @@ runtime macros/matchit.vim
 
 "}}}
 
-" vim:ft=vim:fdm=marker
+" vim: set fdm=marker: "
