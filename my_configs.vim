@@ -83,7 +83,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 "}}}
 " Settings for the Minibuffer Explorer (MBE).       {{{
 try
-    source ~/.vim_runtime/minibufexpl.vim
     let g:miniBufExplBRSplit = 1
     let g:miniBufExplVSplit = 25
     let g:miniBufExplorerDebugLevel = 10
@@ -96,6 +95,11 @@ try
     let g:miniBufExplSplitBelow=1
     let g:bufExplorerSortBy = "name"
     let g:miniBufExplorerHideWhenDiff = 1
+
+    " The minibufexpl.vim should be loaded after setting
+    " the above parameters. Otherwise, they won't take
+    " effect.
+    source ~/.vim_runtime/minibufexpl.vim
 
     autocmd BufRead,BufNew :call UMiniBufExplorer
 

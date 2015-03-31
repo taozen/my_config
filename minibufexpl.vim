@@ -555,7 +555,7 @@ function! <SID>RenderSyntax()
       hi def link MBEVisibleNormal         Comment
       hi def link MBEVisibleChanged        Statement
       hi def link MBEVisibleActiveNormal   Type
-      hi def link MBEVisibleActiveChanged  String
+      hi def link MBEVisibleActiveChanged  Error
     endif
 
     let b:current_syntax = "minibufexpl"
