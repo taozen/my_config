@@ -55,8 +55,9 @@ set tabstop=4
 " Or under marker mode, <range>fo to create a fold.
 map <leader>fs :set fdm=syntax<cr>
 map <leader>fm :set fdm=marker<cr>
-" Keep all folds open when a file is opened
 
+" Enable fold, but keep all folds open when a file is opened.
+" This option seems to be slowing down vim a lot.
 "set fdm=syntax
 "augroup OpenAllFoldsOnFileOpen
 "    autocmd!
