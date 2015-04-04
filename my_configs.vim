@@ -6,6 +6,7 @@
 
 " Enable modeline explicitly.      {{{
 set modeline
+set modelines=5
 
 "}}}
 " Disable mouse moving triggered by touch pad.      {{{
@@ -19,7 +20,11 @@ set foldcolumn=0
 " Color scheme.      {{{
 "colorscheme evening " Use this under Windows.
 colorscheme zellner
+"colorscheme koehler
 set background=dark
+
+" For Mac
+set t_Co=256
 
 "}}}
 " Indentation for c/c++.        {{{
