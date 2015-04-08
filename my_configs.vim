@@ -127,5 +127,28 @@ augroup END
 runtime macros/matchit.vim
 
 "}}}
+" Cscope settings.       {{{
+if has("cscope")
+    set csprg=/usr/local/bin/cscope
+    set csto=0
+    set cst
+    set nocsverb
+
+    " Note: cscope.out should be built with absolute file path.
+    " Add any database in current directory.
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " Else add database pointed to by environment.
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+
+    set csverb
+endif
+
+" Find functions calling this function.
+map <C-\> :cs find c <C-R>=expand("<cword>")<CR><CR>
+
+"}}}
 
 " vim: set fdm=marker: "
