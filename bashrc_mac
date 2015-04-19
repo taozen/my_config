@@ -1,0 +1,12 @@
+set -o vi
+
+export PATH=~/bin:$PATH
+
+alias sc="screen -T xterm-256color"
+alias ll="ls -laF"
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export PS1='\u@\h:\w \$ '
+
+
