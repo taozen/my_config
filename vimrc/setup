@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cp -f vimrc ~/.vimrc && cp -f vimrc.tao ~/.vimrc.tao \
+    || ( echo "Error..." && exit 1 )
+
+git config --global diff.tool vimdiff
+git config --global difftool.prompt No
+
+echo "Done..." 
