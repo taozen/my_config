@@ -1,0 +1,26 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'rking/ag.vim'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-commentary'
+Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/a.vim'
+Plugin 'flazz/vim-colorschemes'
+
+
+call vundle#end()
+
+source ~/.vimrc.amix
+source ~/.vimrc.tao
