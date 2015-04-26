@@ -6,9 +6,9 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
 " Plugin 'tpope/vim-fugitive'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
