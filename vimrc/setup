@@ -1,6 +1,8 @@
 #!/bin/sh
 
-cp -f vimrc ~/.vimrc && cp -f vimrc.tao ~/.vimrc.tao \
+cp -f vimrc ~/.vimrc && \
+    cp -f ~/.vim_runtime/vimrcs/basic.vim ~/.vimrc.amix && \
+    cp -f vimrc.tao ~/.vimrc.tao \
     || ( echo "Error..." && exit 1 )
 
 git config --global diff.tool vimdiff
