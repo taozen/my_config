@@ -16,6 +16,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/a.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
 " Plugin 'tpope/vim-fugitive'
 " Plugin 'Valloric/YouCompleteMe'
 

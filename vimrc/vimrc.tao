@@ -83,8 +83,8 @@ map <leader>fm :set fdm=marker<cr>
 "augroup END
 
 "}}}
-" ',n' for quick 'set nu'         {{{
-map <leader>n :set nu<cr>
+" Toggle line number         {{{
+map <leader>nu :set invnumber<cr>
 
 "}}}
 " Ruby style recommends two-space indent.       {{{
@@ -122,7 +122,7 @@ try
 
     autocmd BufRead,BufNew :call UMiniBufExplorer
 
-    map <leader>u :MBEToggle<cr>
+    map <leader>mb :MBEToggle<cr>
     map <leader>ba :%bd!<bar>q!<cr>
 catch
 endtry
@@ -166,7 +166,7 @@ let g:airline_theme='understated'
 let g:airline_section_b='%F'
 let g:airline_section_c=''
 let g:airline_section_z='Line: %l/%L  Col: %c'
-let g:airline#extensions#whitespace#checks = [ 'indent' ]
+let g:airline#extensions#whitespace#checks = [ ]
 
 ""}}}
 " Misc highlight settings       {{{
@@ -202,6 +202,26 @@ nmap <leader>p :CtrlP<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMRU<cr>
 nmap <leader>bx :CtrlPMixed<cr>
+
+"}}}
+" syntastic     {{{
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
+
+map ]l :lnext<cr>
+map [l :lprev<cr>
+
+"}}}
+" Nerd Tree {{{
+let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinSize = 30
+map <leader>nt :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark 
+map <leader>nf :NERDTreeFind<cr>
 
 "}}}
 
