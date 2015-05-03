@@ -1,0 +1,3 @@
+#!/bin/ksh
+
+sl | xargs egrep -v "^[ \t]*$" | wc -l

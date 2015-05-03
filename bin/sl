@@ -1,0 +1,3 @@
+#!/bin/ksh
+
+find $(pwd) -type f \( -name "*.[ch]pp" -o -name "*.[ch]" -o -name "*.cc" \)

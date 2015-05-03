@@ -1,0 +1,4 @@
+#!/bin/ksh
+
+~/bin/sl > cscope.files
+cscope -Rbkq 

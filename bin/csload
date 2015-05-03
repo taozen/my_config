@@ -1,0 +1,28 @@
+#!/bin/ksh
+
+typeset MAX_LAYER=10
+
+#
+# Search parent directory in the upward direction, for at most N layers.
+#
+function search_upwards
+{
+    set -x
+    typeset file_name=$1
+    typeset max_layer=$2
+    typeset loop=0
+    typeset origin_dir=$(pwd)
+    typeset current_dir=$origin_dir
+
+    while (( $loop < $max_layer )); do 
+        typeset searched="$current_dir/$file_name"
+        
+        [[ -f $searched ]] && echo "$searched" && return 0
+        [[ $current_dir = "/" ]] && return 1
+        current_dir=$(dirname $current_dir)
+        (( loop += 1 ))
+    done
+}
+
+typeset target=$(search_upwards "cscope.out" $MAX_LAYER)
+[[ "$target" != "" ]] && export CSCOPE_DB="$target"
