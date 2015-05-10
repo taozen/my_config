@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+
+import os, sys, commands
+env = Environment(ENV = os.environ)
+
+env['BOOST_INCLUDES'] = '/usr/include/boost'
+env['BOOST_LIBS'] = '/usr/lib/x86_64-linux-gnu'
+
+def boostlibs(libnames,localenv):
+      libs = []
+      for name in libnames:
+         lib = File(os.path.join(localenv['BOOST_LIBS'], '%sboost_%s%s' % ('lib', name, '.so')))
+         libs.append(lib)
+      return libs
+
+env.Append(CCFLAGS = ['-g', '-O0', '-Wall'])
+env.Append(CCFLAGS = ['-Wcast-align'])
+env.Append(CCFLAGS = ['-Wshadow'])
+env.Append(CCFLAGS = ['-Wunused-parameter'])
+env.Append(CXXFLAGS = ['-std=c++11'], TOOLSET = ['g++'])
+env.Append(CPPFLAGS = '-isystem ' + env['BOOST_INCLUDES'])
+
+env['LINKFLAGS'] = '-std=c++11 -static-libstdc++'
+env['LIBPATH'] = ['/usr/lib', '/usr/local/lib'] 
+
+platform_libs = ['pthread', 'rt']
+
+env.Append(CPPPATH = ['#'])
+env.Append(CPPPATH = ['/usr/include/jsoncpp'])
+env.Append(LIBPATH = [env['BOOST_LIBS']])
+
+prgs = []
+third_partys = []
+ALL_LIBS = third_partys + boostlibs(['system', 'chrono', 'thread', 'date_time', 'log_setup', 'log', 'filesystem'], env) + [platform_libs]
+
+prgs += env.Program('hello', 'hello.cpp', LIBS = ALL_LIBS)
+prgs += env.Program('test_shared', 'test_shared.cpp', LIBS = ALL_LIBS)
