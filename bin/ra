@@ -1,0 +1,36 @@
+#!/bin/sh
+
+MY_NAME=$(basename $0)
+MY_DIR=$(cd $(dirname $0);echo $PWD)
+MY_FULL_PATH=$MY_DIR/$MY_NAME
+
+target=$1
+
+function usage 
+{
+    cat << !EOF
+Syntax: $proc_name host
+Available hosts:
+`egrep "^[ \t]+.*\)\$" $MY_FULL_PATH | egrep -v "\\\*"`
+    
+!EOF
+}
+
+case $target in
+    "fos")
+        port=3022
+        user="tao"
+        server="192.168.8.8"
+        break;;
+    "fort")
+        port=56789
+        user="zhengtao"
+        server="login.baijiahulian.com"
+        break;;
+    *)
+        usage
+        exit 1
+        ;;
+esac
+
+ssh -p $port $user@$server
