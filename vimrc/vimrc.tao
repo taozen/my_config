@@ -148,7 +148,12 @@ runtime macros/matchit.vim
 "}}}
 " Cscope settings.       {{{
 if has("cscope")
-    set csprg=/usr/local/bin/cscope
+    if has("mac") || has("macunix")
+        set csprg=/usr/local/bin/cscope
+    else
+        set csprg=/usr/bin/cscope
+    endif
+
     set csto=0
     set cst
     set nocsverb
@@ -216,9 +221,12 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -Wpedantic'
+let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
 
 map ]l :lnext<cr>
 map [l :lprev<cr>
+
+map <leader>ss :SyntasticToggleMode<cr>
 
 "}}}
 " Nerd Tree {{{
