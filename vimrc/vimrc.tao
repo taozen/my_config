@@ -237,5 +237,12 @@ map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
 
 "}}}
+" Support for Chinese character set {{{
+set fileencodings=utf-8,chinese,latin-1
+set fileencoding=utf-8
+set encoding=utf-8
+set termencoding=utf-8
+
+"}}}
 
 " vim: set fdm=marker: "
