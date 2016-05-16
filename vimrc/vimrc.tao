@@ -61,6 +61,10 @@ set noai
 set nosi
 
 "}}}
+" Easy page down using space key.       {{{
+map <space> <C-D>
+
+"}}}
 " Four-spaces tab, auto expansion.      {{{
 set expandtab
 set smarttab
