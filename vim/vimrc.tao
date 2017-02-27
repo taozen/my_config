@@ -49,20 +49,16 @@ endif
 " t0 => Indent a function return type declaration.
 " g0 => Align scope declarations, e.g. 'public:', with entering block.
 " :0 => Indent case lables from switch.
-" (0 => Indent within unclosed parentheses.
+" (0 => Indent within unclosed parentheses. (obsolete)
 " l1 => Align with case lable.
 " is => Indent C++ base class declarations and constructor initializations.
 " c0 => Indent comments.
-set cino=t0g0:0(0,W4l1isc0
+set cino=t0g0:0,W4l1isc0
 
 "}}}
 " Disable auto indent and smart indent. I prefer indent by file type.       {{{
 set noai
 set nosi
-
-"}}}
-" Easy page down using space key.       {{{
-map <space> <C-D>
 
 "}}}
 " Four-spaces tab, auto expansion.      {{{
@@ -105,36 +101,12 @@ set noincsearch
 
 "}}}
 " I enjoy a concise status bar.     {{{
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l/%L\ \ Col:\ %c
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ %=Line:\ %l/%L\ \ Col:\ %c\ \  
+hi StatusLine ctermfg=8 ctermbg=226
 
 "}}}
-" Settings for the Minibuffer Explorer (MBE).       {{{
-try
-    let g:miniBufExplBRSplit = 1
-    let g:miniBufExplVSplit = 30
-    let g:miniBufExplorerDebugLevel = 10
-    let g:miniBufExplModSelTarget = 1
-    let g:miniBufExplorerMoreThanOne = 2
-    let g:miniBufExplModSelTarget = 0
-    let g:miniBufExplUseSingleClick = 1
-    let g:miniBufExplMapWindowNavVim = 1
-    let g:miniBufExplMaxSize = 0
-    let g:miniBufExplSplitBelow=1
-    let g:bufExplorerSortBy = "name"
-    let g:miniBufExplorerHideWhenDiff = 1
-
-    " buffer color theme
-    hi def link MBEChanged               Statement
-    hi def link MBEVisibleNormal         Comment
-    hi def link MBEVisibleChanged        Statement
-    hi def link MBEVisibleActiveNormal   Constant
-
-    autocmd BufRead,BufNew :call UMiniBufExplorer
-
-    map <leader>mb :MBEToggle<cr>
-    map <leader>ba :%bd!<bar>q!<cr>
-catch
-endtry
+" Abandon all buffers then quit vim.       {{{
+map <leader>ba :%bd!<bar>q!<cr>
 
 "}}}
 " Auto filetype for Expect scripts.     {{{
@@ -186,11 +158,8 @@ let g:airline#extensions#whitespace#checks = [ ]
 " Misc highlight settings       {{{
 "
 " Grey unhighlighted vertical split bar
-" hi VertSplit ctermfg=59 ctermbg=59 cterm=NONE guifg=#252c31 guibg=#252c31 gui=NONE
 hi VertSplit ctermfg=59 ctermbg=NONE cterm=NONE guifg=#252c31 guibg=#252c31 gui=NONE
-
 hi NonText ctermfg=59 ctermbg=NONE cterm=NONE guifg=#252c31 guibg=#252c31 gui=NONE
-
 hi TabLineFill term=REVERSE cterm=REVERSE
 hi TabLineSel cterm=NONE ctermfg=11 ctermbg=59 guifg=#f8f6f2 guibg=#1c1b1a
 
@@ -209,13 +178,10 @@ let g:ctrlp_custom_ignore = {
 " control. It also supports works with .svn, .hg, .bzr.
 let g:ctrlp_working_path_mode = 'r'
 
-" Use a leader instead of the actual named binding
-nmap <leader>p :CtrlP<cr>
-
 " Easy bindings for its various modes
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMRU<cr>
-nmap <leader>bx :CtrlPMixed<cr>
+nmap <leader>cb :CtrlPBuffer<cr>
+nmap <leader>cm :CtrlPMRU<cr>
+nmap <leader>cx :CtrlPMixed<cr>
 
 "}}}
 " syntastic     {{{
@@ -246,6 +212,15 @@ set fileencodings=utf-8,chinese,latin-1
 set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
+
+"}}}
+" vim-go shortcuts {{{
+au FileType go nunmap <leader>g
+
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+"au FileType go nmap <leader>gc <Plug>(go-coverage)
 
 "}}}
 

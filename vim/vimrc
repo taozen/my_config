@@ -6,7 +6,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-" Plugin 'fholgado/minibufexpl.vim'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
@@ -17,8 +16,6 @@ Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/a.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'tpope/vim-fugitive'
-" Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 

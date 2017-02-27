@@ -3,7 +3,7 @@ set -o vi
 export PATH=~/bin:$PATH
 
 alias sc="screen -T xterm-256color"
-alias ll="ls -laF"
+alias ll="ls -lrt"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
