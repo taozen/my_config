@@ -215,11 +215,11 @@ set termencoding=utf-8
 
 "}}}
 " vim-go shortcuts {{{
-au FileType go nunmap <leader>g
+nunmap <leader>g
 
-au FileType go nmap <leader>gr <Plug>(go-run)
-au FileType go nmap <leader>gb <Plug>(go-build)
-au FileType go nmap <leader>gt <Plug>(go-test)
+nmap <leader>gr <Plug>(go-run)
+nmap <leader>gb <Plug>(go-build)
+nmap <leader>gt <Plug>(go-test)
 "au FileType go nmap <leader>gc <Plug>(go-coverage)
 
 "}}}
