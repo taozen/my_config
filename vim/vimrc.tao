@@ -217,7 +217,7 @@ set termencoding=utf-8
 " vim-go shortcuts {{{
 nunmap <leader>g
 
-nmap <leader>gr <Plug>(go-run)
+nmap <leader>gg <Plug>(go-run)
 nmap <leader>gb <Plug>(go-build)
 nmap <leader>gt <Plug>(go-test)
 nmap <leader>gi <Plug>(go-imports)
