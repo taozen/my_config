@@ -220,7 +220,7 @@ nunmap <leader>g
 nmap <leader>gr <Plug>(go-run)
 nmap <leader>gb <Plug>(go-build)
 nmap <leader>gt <Plug>(go-test)
-"au FileType go nmap <leader>gc <Plug>(go-coverage)
+nmap <leader>gi <Plug>(go-imports)
 
 "}}}
 
