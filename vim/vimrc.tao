@@ -214,13 +214,15 @@ set encoding=utf-8
 set termencoding=utf-8
 
 "}}}
-" vim-go shortcuts {{{
+" vim-go options and shortcuts {{{
 nunmap <leader>g
 
 nmap <leader>gg <Plug>(go-run)
 nmap <leader>gb <Plug>(go-build)
 nmap <leader>gt <Plug>(go-test)
 nmap <leader>gi <Plug>(go-imports)
+
+let g:go_metalinter_autosave = 1
 
 "}}}
 
