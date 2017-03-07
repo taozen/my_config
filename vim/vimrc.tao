@@ -206,6 +206,12 @@ map <leader>nt :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
 
+" Show the selected file name in the status line of NerdTree window.
+" let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
+
+" Set an empty status line for NerdTree window.
+let NERDTreeStatusline=" "
+
 "}}}
 " Support for Chinese character set {{{
 set fileencodings=utf-8,chinese,latin-1
