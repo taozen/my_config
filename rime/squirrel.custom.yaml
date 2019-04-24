@@ -1,0 +1,7 @@
+# Tao's customization against the default settings.
+#
+
+patch:
+    'style/color_scheme': lost_temple
+    'style/horizontal': false
+
