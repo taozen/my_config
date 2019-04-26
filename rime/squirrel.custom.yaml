@@ -5,3 +5,8 @@ patch:
     'style/color_scheme': lost_temple
     'style/horizontal': false
 
+    app_options:
+        com.alfredapp.Alfred:
+            ascii_mode: false
+
+
