@@ -33,7 +33,8 @@ set foldcolumn=0
 " colo candy
 " colo matrix
 
-colo candy
+colo google
+
 set background=dark
 
 " For Mac
@@ -41,8 +42,19 @@ set t_Co=256
 
 " For vimdiff
 if &diff
-    colo vividchalk
+    colo google
 endif
+
+" command to show all highlight groups
+" :so $VIMRUNTIME/syntax/hitest.vim
+hi FgCocErrorFloatBgCocFloating ctermfg=0 ctermbg=13 guibg=Magenta
+hi CocListBgRed ctermfg=0 ctermbg=13 guibg=Magenta
+hi CocListBgMagenta ctermfg=0 ctermbg=13 guibg=Magenta
+
+"hi Pmenu
+"hi PmenuSel
+"hi PmenuSbar
+"hi PmenuThumb
 
 "}}}
 " Indentation for c/c++.        {{{
